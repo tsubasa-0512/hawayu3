@@ -11,7 +11,44 @@
 |
 */
 
-Auth::routes();
+// ユーザー
+Route::namespace('User')->prefix('user')->name('user.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:user')->group(function () {
+
+        // TOPページ
+        Route::resource('home', 'HomeController', ['only' => 'index']);
+
+    });
+});
+
+// 管理者
+Route::namespace('Operator')->prefix('operator')->name('operator.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:operator')->group(function () {
+
+        // TOPページ
+        Route::resource('home', 'HomeController', ['only' => 'index']);
+
+    });
+
+});
 
 Route::get('{any}', function () {
     return view('app');

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-    BrowserRouter,
-    Route,
-    Switch,
-  } from 'react-router-dom';
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import Example from './pages/Example';
 import Home from './pages/Home';
 
@@ -24,4 +24,4 @@ import Home from './pages/Home';
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  ), document.getElementById('app'))
+  ), document.getElementById('example'))
