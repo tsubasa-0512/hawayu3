@@ -1,7 +1,11 @@
 @extends('layouts.user.app')
 
 @section('content')
-<div id="example">
-        
+<div>あなたはユーザーです</div>
+
+<!-- <div id="usermypage"> 
+</div> -->
+
+<div id="usermypage"> 
 </div>
 @endsection

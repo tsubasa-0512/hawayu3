@@ -18,4 +18,7 @@ function Example() {
     );
 }
 
+// if (document.getElementById('examplepage')) {
+//     ReactDOM.render(<Example />, document.getElementById('examplepage'));
+// }
 export default Example;
