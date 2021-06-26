@@ -5,16 +5,15 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Example from './pages/Example';
 import Home from './pages/Home';
+import UserMyPage from './pages/user/UserMyPage';
 
   function App() {
     return (
         <div>
             <Switch>
-                <Route path='/example' exact component={Example} />
-
                 <Route path='/' exact component={Home} />
+                <Route path='/user/home' exact component={UserMyPage} />
             </Switch>
         </div>
     );
