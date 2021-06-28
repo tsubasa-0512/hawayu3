@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import UserFooter from './UserFooter';
+
 function UserMyPage() {
     const [user, setUser] = useState([]);
+
     const api_token=
     document
     .querySelector('meta[name="api-token"]')
     .getAttribute("content");
+
     useEffect(() => {
         getUser()
     },[])
@@ -45,9 +49,10 @@ function UserMyPage() {
                 <dt>email</dt>
                 <dd>{user.email}</dd>
                 <dt>登録日</dt>
-                <dd>{user.timestamps}</dd>
+                <dd>{user.created_at}</dd>
              </S2Box>
       </SDiv>
+      <UserFooter />
       </>
     )
 }
@@ -76,3 +81,7 @@ const SDiv = styled.div`
     justify-content: center;
     `
 export default UserMyPage;
+
+// if (document.getElementById('usermypage')) {
+//     ReactDOM.render(<UserMyPage />, document.getElementById('usermypage'));
+// }
